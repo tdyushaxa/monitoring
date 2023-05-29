@@ -194,7 +194,7 @@ def CameraPageView(request):
 
 
 def CameraHaftaPageView(request):
-    model = Device.objects.get_object_or_404(name__contains='Kameralar')
+    model = Device.objects.get(name__contains='Kameralar')
     info = model.deviceinformation_set.all()
     today = timezone.now()
     week_start = today - timedelta(days=7)
