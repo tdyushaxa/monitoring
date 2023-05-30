@@ -58,6 +58,10 @@
                 </div>
             </div>
             <div class="col-12 col-md-9 d-flex d-md-block flex-wrap justify-content-between border-end px-0">
+                {% if request.user.is_authenticated %}
+                    <a class="btn btn-primary mt-4" href="{% url 'account:logout' %}" style="float: right;margin-right: 30%">Logout</a>
+
+                {% endif %}
                 <div class="col-12  col-md-4">
                     <form method="GET" id="FORM">
                         <select class="form-select m-3" aria-label="Default select example" name="select" id="selected">
@@ -69,6 +73,7 @@
                         </select>
                         <button style="float: right" type="submit" class="btn btn-primary">tanlash</button>
                     </form>
+
                 </div>
                 <div class="col-12 col-md-9"
                      style="display: flex;  justify-content: space-around; align-items: center;">
