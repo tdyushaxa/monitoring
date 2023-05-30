@@ -60,6 +60,7 @@ def PrinterPageView(request):
     week_start = today - timedelta(days=30)
     week_end = week_start + timedelta(days=30)
     weekly_updates = info.filter(timestamp__range=[week_start, week_end])
+    print(len(weekly_updates))
     month5 = [x.percentage for x in weekly_updates][:5]
     month10 = [x.percentage for x in weekly_updates][5:10]
     month15 = [x.percentage for x in weekly_updates][10:15]
@@ -68,6 +69,7 @@ def PrinterPageView(request):
     month30 = [x.percentage for x in weekly_updates][25:30]
     combined_lists = zip(month5, month10, month15, month20, month25, month30)
     data = [sum(values) / len(values) for values in combined_lists]
+    print(data)
     ummumiy_son = info.aggregate(Avg('total'), Avg('percentage'))
     total = math.floor(ummumiy_son['total__avg'])
     percentage = math.floor(ummumiy_son['percentage__avg'])
@@ -144,8 +146,10 @@ def WifiPageView(request):
     month20 = [x.percentage for x in weekly_updates][15:20]
     month25 = [x.percentage for x in weekly_updates][20:25]
     month30 = [x.percentage for x in weekly_updates][25:30]
+    print(len(weekly_updates))
     combined_lists = zip(month5, month10, month15, month20, month25, month30)
     data = [sum(values) / len(values) for values in combined_lists]
+    print(data)
     ummumiy_son = info.aggregate(Avg('total'), Avg('percentage'))
     total = math.floor(ummumiy_son['total__avg'])
     percentage = math.floor(ummumiy_son['percentage__avg'])
