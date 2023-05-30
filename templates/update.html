@@ -50,7 +50,8 @@
                     <span class="fs-5 mx-3">Kameralar</span>
                 </a>
                 <div class="d-flex align-items-center justify-content-between flex-wrap  text-decoration-none  border-top pt-2 m-2 mb-1 p-3 bg-primary bg-gradient rounded-4 text-light">
-                    <a href="{% url 'main:update' %}" class="d-flex align-items-center  px-3 text-decoration-none text-black-50">
+                    <a href="{% url 'main:update' %}"
+                       class="d-flex align-items-center  px-3 text-decoration-none text-black-50">
                         <i class="fa-solid fa-screwdriver-wrench"></i>
                         <span class="fs-5 mx-3">Bazani tahrirlash</span>
                     </a>
@@ -60,10 +61,11 @@
                 <div class="col-12  col-md-4">
                     <form method="GET" id="FORM">
                         <select class="form-select m-3" aria-label="Default select example" name="select" id="selected">
-                            <option value="Kameralar">Kameralar</option>
-                            <option value="Wifi router">Wifi router</option>
-                            <option value="Printerlar">Printerlar</option>
-                            <option value="Kompyuterlar">Kompyuterlar</option>
+                            <option value="Kameralar" selected>Kameralar</option>
+                            <option value="Wifi router" selected>Wifi router</option>
+                            <option value="Printerlar" selected>Printerlar</option>
+                            <option value="Proyektorlar" selected>Proyektorlar</option>
+                            <option value="Kompyuterlar" selected>Kompyuterlar</option>
                         </select>
                         <button style="float: right" type="submit" class="btn btn-primary">tanlash</button>
                     </form>
@@ -78,7 +80,8 @@
                     <div class="forms col-12 col-md-4 >
                        <label for=" new
                     ">Yangi qo'shish</label>
-                    <input value="0" class="form-control" type="number" name="new" id="new" placeholder="yangi qo'shish">
+                    <input value="0" class="form-control" type="number" name="new" id="new"
+                           placeholder="yangi qo'shish">
                     <label for="tamirlnadi">Tamirlandi</label>
                     <input value="0" class="form-control" type="number" name="tamir" id="new" placeholder="Tamirlandi">
                     <label for="broken">Buzuldi</label>
@@ -97,10 +100,9 @@
         </div>
     </div>
     </div>
+
 </main>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
 </body>
 
 </html>

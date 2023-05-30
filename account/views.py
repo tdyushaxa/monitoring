@@ -1,6 +1,8 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
+
+
 def LoginPageView(request):
     form = AuthenticationForm()
     if request.method == 'POST':
@@ -10,3 +12,8 @@ def LoginPageView(request):
             login(request,user)
             return redirect('main:update')
     return render(request,'login.html',{'form':form})
+
+
+def LogoutPageView(request):
+    logout(request)
+    return redirect('main:computer')

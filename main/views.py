@@ -235,4 +235,4 @@ def UPdateView(request):
                 update.save()
             update.save()
             return redirect('main:update')
-    return render(request, 'update.html', {'form': form})
+    return render(request, 'update.html', {'form': form,'natija':natija})
